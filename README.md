@@ -35,8 +35,15 @@ A ServeMux is essentially a HTTP request router (or multiplexor). It compares in
 Handlers are responsible for writing response headers and bodies. Almost any object can be a handler, so long as it satisfies the http.Handler interface. 
 
 
-<hr><hr>
 
+
+
+![GitHub Logo](/listenandserve.png)
+![GitHub Logo](/handlerfunc.png)
+
+<br>
+<hr><hr>
+<br>
 
 **Resources**
 
