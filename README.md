@@ -27,7 +27,12 @@ Often defining a full type to implement the `http.Handler` interface is a bit ov
 The `http.ServeMux` is itself an `http.Handler`, so it can be passed into `http.ListenAndServe`. When it receives a request it will check if the request’s path is prefixed by any of its known paths, choosing the longest prefix match it can find. We use the `/` endpoint as a catch-all to catch any requests to unknown endpoints.
 
 `http.ServeMux` has both `Handle` and `HandleFunc` methods. These do the same thing, except that `Handle` takes in an `http.Handler` while `HandleFunc` merely takes in a function, implicitly wrapping it just as `http.HandlerFunc` does.
+<br>
 
+**Processing HTTP requests with Go is primarily about two things: ServeMuxes and Handlers.**
+A ServeMux is essentially a HTTP request router (or multiplexor). It compares incoming requests against a list of predefined URL paths, and calls the associated handler for the path whenever a match is found.
+
+Handlers are responsible for writing response headers and bodies. Almost any object can be a handler, so long as it satisfies the http.Handler interface. 
 
 
 <hr><hr>
