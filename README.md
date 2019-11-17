@@ -45,3 +45,7 @@ https://cryptic.io/go-http/
 https://www.alexedwards.net/blog/a-recap-of-request-handling
 
 https://www.alexedwards.net/blog/interfaces-explained
+
+https://golang.org/pkg/net/http/#HandlerFunc
+
+
