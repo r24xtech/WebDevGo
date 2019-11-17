@@ -9,3 +9,21 @@ handler is an object which satisfies the http.Handler interface
 ==> accept connections - listen on a port
 http://<servername>/<handlername>?<parameters>
 multiplexer ==> the piece of code that redirects a request to a handler.
+
+
+```go
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+```
+
+
+<hr><hr>
+
+**Resources**
+
+https://cryptic.io/go-http/
+
+https://www.alexedwards.net/blog/a-recap-of-request-handling
+
+https://www.alexedwards.net/blog/interfaces-explained
