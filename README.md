@@ -3,8 +3,9 @@ Web development in Go
 
 
 HANDLER ==> `func (w http.ResponseWriter, r *http.Request)`
-The request handler alone can not accept any HTTP connections from the outside. An HTTP server has to listen on a port to pass connections on to the request handler. Handler is an object which satisfies the `http.Handler` interface
-[HTTP server]
+The request handler alone can not accept any HTTP connections from the outside. An HTTP server has to listen on a port to pass connections on to the request handler. Handler is an object which satisfies the `http.Handler` interface.<br>
+
+**[HTTP server]**
 * process dynamic requests:: http.HandleFunc
 * serve static assets:: http.FileServer
 * accept connections:: listen on a port
