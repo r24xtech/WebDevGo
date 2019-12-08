@@ -24,6 +24,15 @@ func (m *SnippetModel) Insert(title, content, expires string) (int, error) {
   return int(id), nil
 }
 
+func (m *SnippetModel) Delete(id int) error {
+  stmt := `delete from snippets where id = ?`
+  _, err := m.DB.Exec(stmt, id)
+  if err != nil {
+    return err
+  }
+  return nil
+}
+
 func (m *SnippetModel) Get(id int) (*models.Snippet, error) {
   stmt := `SELECT id, title, content, created, expires FROM snippets
   WHERE expires > UTC_TIMESTAMP() AND id = ?`
@@ -47,7 +56,7 @@ func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
   if err != nil {
     return nil, err
   }
-  defer rows.Close() // important
+  defer rows.Close()
   snippets := []*models.Snippet{}
   for rows.Next() {
     s := &models.Snippet{}
