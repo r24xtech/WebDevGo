@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>home page</h1>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Item</th>
+        <th>Created</th>
+        <th>Option</th>
+      </tr>
+      {{range .ListData}}
+      <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Item}}</td>
+        <td>{{.Created}}</td>
+        <td><form action="/delete/{{.ID}}" method="POST">
+          <input type="submit" value="Delete">
+        </form></td>
+      </tr>
+      {{end}}
+    </table>
+    <h4>Add new item to list:</h4>
+    <form action="/create" method="POST">
+      <input type="text" name="item">
+      <input type='submit' value='Add'>
+    </form>
+  </body>
+<style media="screen">
+  table, th, td {
+border: 1px solid black;
+}
+</style>
+</html>
