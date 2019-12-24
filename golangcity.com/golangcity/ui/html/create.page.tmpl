@@ -1,0 +1,34 @@
+{{template "base" .}}
+
+{{define "main"}}
+
+<form action="/post/create" method="POST">
+  <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+  {{with .Form}}
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title</label>
+    {{with .Errors.Get "title"}}
+    <label class="error-label">{{.}}</label>
+    {{end}}
+    <input class="form-control" type="text" name="title" value='{{.Get "title"}}'>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Post Content</label>
+    {{with .Errors.Get "content"}}
+    <label class="error-label">{{.}}</label>
+    {{end}}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="content">{{.Get "content"}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Go Code</label>
+    {{with .Errors.Get "code"}}
+    <label class="error-label">{{.}}</label>
+    {{end}}
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="code">{{.Get "code"}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Post</button>
+
+  {{end}}
+</form>
+{{end}}

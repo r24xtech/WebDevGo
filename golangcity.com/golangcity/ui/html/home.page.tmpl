@@ -1,0 +1,60 @@
+{{template "base" .}}
+
+{{define "main"}}
+
+{{if .Posts}}
+
+		{{range .Posts}}
+		<div class="home-posts-div">
+			<p><strong><a href="/post/{{.ID}}">{{.Title}}</a></strong> | {{humanDate .Created}}</p>
+			<p>{{.Content}}</p>
+			<pre><code class="language-go">{{.Code}}</code></pre>
+		</div>
+		{{end}}
+
+{{else}}
+	<p>There's nothing here yet.</p>
+{{end}}
+
+<br><hr><hr><br>
+
+<ul>
+	<li>disable http.FileServer directory listings</li>
+	<li>confirmation email to user && 3rd party github/gmail authentication</li>
+	<li>prepared statements sql</li>
+	<li>block methods other than get on certain routes => pat router does that for you?</li>
+	<li>if you are spinning up additional goroutines from within your web application and thereis any chance of a panic, you must make sure that you recover any panics from within those too</li>
+	<li>only go lang but i'm adding</li>
+	<li>give option to add a second block of code, give a few options to determine the block of code language (or leave it empty):: sql, html, go, empty|| line numbers or no line numbers</li>
+	<li>give the option to leave only the code section blank...</li>
+	<li>cdn vs. local files || remember: your internet sucks...that's why local files may seem faster</li>
+	<li>add option to choose language and line numbers or not => you already have line numbers</li>
+	<li>//SET CODE POST SIZE TO FIXED, AND USER CAN JUST SCROLL TO SEE CODE</li>
+	<li>dark icon ain't gonna work...you need to stand out</li>
+	<li>user login directly in the url, even if you're already logged in....change that</li>
+	<li>error messages should be well displayed with their own page</li>
+	<li>load more posts option -- click and get 10 more posts instead of getting all at once</li>
+	<li>posts should have a user field -- and users should have a posts field</li>
+</ul>
+
+<br><hr><hr><hr><br>
+<h5>to do list</h5>
+<ul>
+	<li><a href="https://go-proverbs.github.io/">Go Proverbs</a></li>
+	<li><a href="https://www.thinkful.com/">thinkful</a> -- coding bootcamp</li>
+	<li><a href="https://www.theodinproject.com/">TheOdinProject</a> - check it out (<strong>ADD TO GOLANGLAB ADDITIONAL LIST LEARNING RESOURCES</strong> although it doesn't have Go)</li>
+	<li><a href="https://freshman.tech/">freshman</a> - interesting website - it has Go posts about web development</li>
+	<li><strong>RichardParker web site:: (or company name)</strong> -- web dev with Go || portifolio//other websites we've created</li>
+	<li><a href="https://blog.gopheracademy.com/page/4/">GopherAcademy</a> - interesting blog (already in the )</li>
+	<li>download opera and safari to see how your website looks on those <strong><====</strong></li>
+	<li><a href="https://www.gocode.io/operation-go">Operation Go: A Routine Mission</a></li>
+	<li><a href="https://golangweekly.com/">Golang Weekly</a></li>
+	<li><a href="https://developer.github.com/v3/guides/basics-of-authentication/">github</a> - authentication 3rd party</li>
+	<li><a href="https://html5up.net/">html5 up</a> - html templates and ideas</li>
+	<li><a href="https://www.apple.com/safari/">safari</a> & <a href="https://www.opera.com/">opera</a> -- <strong>download other browsers to see how your websites look like</strong></li>
+	<li><a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html">Practical Go: Real world advice for writing maintainable Go programs</a></li>
+	<li><a href="https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3">Learning Go’s Concurrency Through Illustrations</a></li>
+	<li><a href="https://cronokirby.github.io/posts/data-races-vs-race-conditions/">Data Races vs Race Conditions</a> ==> different!!!</li>
+</ul>
+
+{{end}}

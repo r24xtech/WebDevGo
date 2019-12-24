@@ -1,0 +1,13 @@
+{{template "base" .}}
+
+{{define "main"}}
+
+{{with .Post}}
+<h2>{{.Title}}</h2>
+<p>{{.ID}}</p>
+<pre><code>{{.Content}}</code></pre>
+<pre><code class="language-go">{{.Code}}</code></pre>
+<p>{{humanDate .Created}}</p>
+{{end}}
+
+{{end}}
